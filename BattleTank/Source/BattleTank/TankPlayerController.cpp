@@ -8,18 +8,6 @@ void ATankPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
 
-	PrimaryActorTick.bCanEverTick = true;
-
-	ATank* ControlledTank = GetControlledTank();
-	if (!ControlledTank)
-	{
-		UE_LOG(LogTemp, Warning, TEXT("TankPlayerController - No tank found!"));
-	}
-	else
-	{
-		FString ControlledTankName = ControlledTank->GetName();
-		UE_LOG(LogTemp, Warning, TEXT("TankPlayerController - Possessing %s"), *ControlledTankName);
-	}
 }
 
 void ATankPlayerController::Tick(float DeltaTime)
